@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Calcular Média</string>
+    <string name="nota1">Inserir nota 1</string>
+    <string name="nota2">Inserir nota 2</string>
+    <string name="nota3">Inserir nota 3</string>
+    <string name="media"></string>
+    <string name="maior_nota"></string>
+    <string name="menor_nota"></string>
+    <string name="btn">Calcular</string>
+</resources>
