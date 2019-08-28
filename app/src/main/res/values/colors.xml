@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#008577</color>
-    <color name="colorPrimaryDark">#00574B</color>
-    <color name="colorAccent">#D81B60</color>
+    <color name="colorPrimary">#D2DD0EFF</color>
+    <color name="colorPrimaryDark">#F50F0F0F</color>
+    <color name="colorAccent">#EDB81E</color>
+    <color name="aprovado">#98FB98</color>
+    <color name="recuperacao">#FF7F24</color>
+    <color name="reprovado">#EE0000</color>
 </resources>

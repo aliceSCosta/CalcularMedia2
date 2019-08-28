@@ -5,15 +5,17 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
     private EditText editTextNota1;
     private EditText editTextNota2;
     private EditText editTextNota3;
-    private EditText editTextMedia;
-    private EditText editTextMaior;
-    private EditText editTextMenor;
+    private TextView textViewMedia;
+    private TextView textViewMaior;
+    private TextView textViewtMenor;
+    private TextView textViewResultado;
 
 
     @Override
@@ -24,9 +26,10 @@ public class MainActivity extends AppCompatActivity {
         editTextNota1 = findViewById(R.id.edit_text_nota1);
         editTextNota2 = findViewById(R.id.edit_text_nota2);
         editTextNota3 = findViewById(R.id.edit_text_nota3);
-        editTextMedia = findViewById(R.id.edit_text_media);
-        editTextMaior = findViewById(R.id.edit_text_maior);
-        editTextMenor = findViewById(R.id.edit_text_menor);
+        textViewMedia = findViewById(R.id.text_view_media);
+        textViewMaior = findViewById(R.id.text_view_maior);
+        textViewtMenor = findViewById(R.id.text_view_menor);
+        textViewResultado = findViewById(R.id.text_view_resultado);
     }
 
     public void calcularMedia(View v){
@@ -40,38 +43,51 @@ public class MainActivity extends AppCompatActivity {
         Double nota3 = Double.parseDouble(editTextNota3.getText()
                 .toString()
                 .replace(",","."));
-        Double calcular = (nota1+nota2+nota3)/3;
-        editTextMedia.setText(calcular.toString());
+        Double media = (nota1+nota2+nota3)/3;
+        textViewMedia.setText(media.toString());
 
         if (nota1>nota2 && nota1>nota3) {
 
-            editTextMaior.setText(nota1.toString());
+            textViewMaior.setText(nota1.toString());
 
         }
 
         else if (nota2>nota1 && nota2>nota3) {
 
-            editTextMaior.setText(nota2.toString());
+            textViewMaior.setText(nota2.toString());
         }
 
         else {
 
-            editTextMaior.setText(nota3.toString());
+            textViewMaior.setText(nota3.toString());
         }
 
         if (nota1<nota2 && nota1<nota3) {
 
-            editTextMenor.setText(nota1.toString());
+            textViewtMenor.setText(nota1.toString());
         }
 
         else if (nota2<nota1 && nota2<nota3) {
 
-            editTextMenor.setText(nota2.toString());
+            textViewtMenor.setText(nota2.toString());
         }
 
         else {
 
-            editTextMenor.setText(nota3.toString());
+            textViewtMenor.setText(nota3.toString());
+        }
+
+        if (media>= 7){
+            textViewResultado.setText("Aprovado");
+            textViewResultado.setTextColor(getResources().getColor(R.color.aprovado));
+        }
+        else if (media<7 && media>=5){
+            textViewResultado.setText("Recuperação");
+            textViewResultado.setTextColor(getResources().getColor(R.color.recuperacao));
+        }
+        else if (media<5) {
+            textViewResultado.setText("Reprovado");
+            textViewResultado.setTextColor(getResources().getColor(R.color.reprovado));
         }
     }
 }
